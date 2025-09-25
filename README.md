@@ -1,4 +1,4 @@
-![](public/logo1.png)
+<center><img src='public/logo1.png' width=300></center>
 
 # OWASP WSTG Progress Tracker
 
