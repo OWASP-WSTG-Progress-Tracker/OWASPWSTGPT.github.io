@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Security-focused professional theme */
+    --background: 210 24% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 24% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 24% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Navy blue primary for professional security tools */
+    --primary: 213 94% 68%;
+    --primary-foreground: 210 24% 6%;
+
+    --secondary: 210 24% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 24% 10%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 213 94% 68%;
+    --accent-foreground: 210 24% 6%;
+
+    /* Security status colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 24% 6%;
+    
+    --info: 213 94% 68%;
+    --info-foreground: 210 24% 6%;
+
+    --border: 210 24% 12%;
+    --input: 210 24% 10%;
+    --ring: 213 94% 68%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors for categories */
+    --sidebar-background: 210 24% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 213 94% 68%;
+    --sidebar-primary-foreground: 210 24% 6%;
+    --sidebar-accent: 210 24% 10%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 210 24% 12%;
+    --sidebar-ring: 213 94% 68%;
+
+    /* Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 94% 78%));
+    --gradient-card: linear-gradient(135deg, hsl(210 24% 8%), hsl(210 24% 10%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    
+    /* Security-focused shadows */
+    --shadow-glow: 0 0 20px hsl(213 94% 68% / 0.15);
+    --shadow-card: 0 4px 12px hsl(210 24% 4% / 0.3);
+    --shadow-elevated: 0 8px 24px hsl(210 24% 4% / 0.4);
+    
+    /* Professional transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    /* Light theme for optional switching - keeping dark as default */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 213 94% 68%;
+    --info-foreground: 0 0% 100%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 213 94% 68%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 213 94% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 213 94% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Security-focused custom classes */
+  .test-id {
+    @apply font-mono text-sm tracking-wide;
+  }
+
+  .status-not-started {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .status-in-progress {
+    @apply bg-warning/20 text-warning border-warning/30;
+  }
+
+  .status-done {
+    @apply bg-success/20 text-success border-success/30;
+  }
+
+  .status-blocked {
+    @apply bg-destructive/20 text-destructive border-destructive/30;
+  }
+
+  .progress-bar {
+    background: var(--gradient-primary);
+    transition: var(--transition-smooth);
+  }
+
+  .card-glow {
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .card-glow:hover {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+  }
+}
