@@ -1,4 +1,5 @@
-<center><img src='public/logo1.png' width=300></center>
+<p align="center"><img src='public/logo1.png' width=300>
+</p>
 
 # OWASP WSTG Progress Tracker
 
