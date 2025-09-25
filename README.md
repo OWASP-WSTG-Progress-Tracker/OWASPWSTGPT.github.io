@@ -33,12 +33,9 @@ This update includes the following enhancement.
 5. Generation of `PDF Reports`. The initial details of the report are configurable via `Report Generation Menu`.
 
 
+
+
 ## Community Call
 
 I personally believe in this project and i believe this will add more value for everyone across the community and we don't know this might become a go to tool within the corporate entities, having a mindset to support and use `Open-Source` projects. 
 
-## Demo 
-
-<video width="800" height="600" controls>
-  <source src="https://youtu.be/fd55mXat5NU" type="video/mp4">
-</video>
