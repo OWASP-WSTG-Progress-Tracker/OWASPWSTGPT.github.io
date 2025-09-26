@@ -34,7 +34,7 @@ This update includes the following enhancement.
 
 # Usage
 
-The usage of the application is fairly simple. The first and the foremost is the WSTG checklist that goes into `src/data/external-checklist.jso`, this requies to be updated with the latest releases of `OWASP WSTG`. Then thre is a second file named `owaspTests.ts` which loads up the checklist when you start the application server. 
+The usage of the application is fairly simple. The first and the foremost is the WSTG checklist that goes into `src/data/external-checklist.json`, this requies to be updated with the latest releases of `OWASP WSTG`. Then thre is a second file named `owaspTests.ts` which loads up the checklist when you start the application server. 
 
 For the time being it only supports the `OWASP WSTG` checklist, but the work in progress is to have customer checklists as well. 
 
