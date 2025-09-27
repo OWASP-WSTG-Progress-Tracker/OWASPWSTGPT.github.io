@@ -1,16 +1,19 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react"; // Change this line if you installed @vitejs/plugin-react
+// Use dynamic import for plugin-react to avoid ESM issues in Vercel
 import path from "path";
 
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [react() /*, mode === "development" && componentTagger()*/].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+export default defineConfig(async ({ mode }) => {
+  const react = (await import("@vitejs/plugin-react")).default;
+  return {
+    server: {
+      host: "::",
+      port: 8080,
     },
-  },
-}));
+    plugins: [react()],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
+    },
+  };
+});
